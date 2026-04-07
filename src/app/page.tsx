@@ -58,7 +58,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-navy/5 shadow-lg shadow-navy/10">
               <Image
                 src="/images/generated/hero.png"
                 alt="Abstract visualization of AI-powered marketing systems"
@@ -95,7 +95,7 @@ export default function HomePage() {
               <SectionReveal key={s.title} delay={0.1}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                   <div
-                    className={`relative aspect-[16/10] rounded-2xl overflow-hidden ${
+                    className={`relative aspect-[16/10] rounded-2xl overflow-hidden bg-navy/5 ${
                       i % 2 === 1 ? "lg:order-2" : ""
                     }`}
                   >

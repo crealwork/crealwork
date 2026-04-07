@@ -20,10 +20,10 @@ export function ServiceCard({
 
   return (
     <div className="group">
-      <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-6">
+      <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-6 bg-navy/5">
         <Image src={image} alt={title} fill className="object-cover" />
       </div>
-      <h3 className="font-display text-2xl font-bold tracking-tight text-navy">
+      <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-navy">
         {title}
       </h3>
       <p className="mt-2 text-warm-gray leading-relaxed">{description}</p>

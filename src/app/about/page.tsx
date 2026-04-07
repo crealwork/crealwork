@@ -105,7 +105,7 @@ export default function AboutPage() {
             </SectionReveal>
 
             <SectionReveal delay={0.1}>
-              <div className="relative aspect-square rounded-2xl overflow-hidden">
+              <div className="relative aspect-square rounded-2xl overflow-hidden bg-navy/5">
                 <Image
                   src="/images/generated/decorative-1.png"
                   alt="Abstract representation of connected marketing systems"
