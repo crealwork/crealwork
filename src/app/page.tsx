@@ -1,65 +1,151 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { CTAButton } from "@/components/cta-button";
+import { SectionReveal } from "@/components/section-reveal";
+import { MetricsStrip } from "@/components/metrics-strip";
 
-export default function Home() {
+const services = [
+  {
+    title: "AI-Powered Marketing",
+    description:
+      "Campaign automation, AI-driven content, and predictive analytics that turn data into decisions.",
+    image: "/images/generated/service-ai.png",
+    href: "/services",
+  },
+  {
+    title: "Lead Generation",
+    description:
+      "B2B and B2C pipelines built for scale. Cold outreach, landing pages, and conversion systems that deliver.",
+    image: "/images/generated/service-leadgen.png",
+    href: "/services",
+  },
+  {
+    title: "Growth for Startups",
+    description:
+      "GTM strategy, product-market fit validation, and B2B SaaS growth playbooks from someone who has done it.",
+    image: "/images/generated/service-startup.png",
+    href: "/services",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* Hero — Asymmetric split (text left, image right) */}
+      <section className="section-gap">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center min-h-[80dvh]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wider text-warm-gray mb-4">
+                CREAL Marketing Inc.
+              </p>
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none text-navy">
+                Marketing that
+                <br />
+                <span className="text-yellow">thinks for itself.</span>
+              </h1>
+              <p className="mt-6 text-lg text-warm-gray leading-relaxed max-w-[50ch]">
+                We combine AI, automation, and ten years of lead generation
+                experience to build marketing systems that grow your business
+                while you focus on what matters.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <CTAButton href="/contact">Get in Touch</CTAButton>
+                <CTAButton href="/services" variant="outline">
+                  Our Services
+                </CTAButton>
+              </div>
+            </div>
+
+            <div className="relative aspect-[4/3] lg:aspect-auto lg:h-[600px] rounded-3xl overflow-hidden">
+              <Image
+                src="/images/generated/hero.png"
+                alt="Abstract visualization of AI-powered marketing systems"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Metrics */}
+      <section className="bg-off-white section-gap">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <MetricsStrip />
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Services — Zig-zag layout */}
+      <section className="section-gap">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+          <SectionReveal>
+            <p className="text-sm font-semibold uppercase tracking-wider text-warm-gray mb-3">
+              What We Do
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tighter text-navy max-w-[20ch]">
+              Three ways we drive growth.
+            </h2>
+          </SectionReveal>
+
+          <div className="mt-16 flex flex-col gap-20">
+            {services.map((s, i) => (
+              <SectionReveal key={s.title} delay={0.1}>
+                <div
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center`}
+                  style={i % 2 === 1 ? { direction: "rtl" } : undefined}
+                >
+                  <div
+                    className="relative aspect-[16/10] rounded-2xl overflow-hidden"
+                    style={{ direction: "ltr" }}
+                  >
+                    <Image
+                      src={s.image}
+                      alt={s.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div style={{ direction: "ltr" }}>
+                    <h3 className="font-display text-2xl font-bold tracking-tight text-navy">
+                      {s.title}
+                    </h3>
+                    <p className="mt-3 text-warm-gray leading-relaxed max-w-[45ch]">
+                      {s.description}
+                    </p>
+                    <Link
+                      href={s.href}
+                      className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-navy hover:text-yellow transition-colors"
+                    >
+                      Learn more <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="bg-navy section-gap">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 text-center">
+          <SectionReveal>
+            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tighter text-white">
+              Ready to automate your growth?
+            </h2>
+            <p className="mt-4 text-warm-gray-light text-lg max-w-[50ch] mx-auto">
+              Let us show you how AI and automation can transform your marketing
+              from a cost center into a growth engine.
+            </p>
+            <div className="mt-8">
+              <CTAButton href="/contact">Get in Touch</CTAButton>
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
+    </>
   );
 }
