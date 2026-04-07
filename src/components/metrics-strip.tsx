@@ -47,14 +47,14 @@ export function MetricsStrip() {
           key={m.label}
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ delay: i * 0.1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="text-center lg:text-left"
         >
-          <div className="font-display text-4xl lg:text-5xl font-bold tracking-tighter text-navy">
+          <div className="font-display text-5xl lg:text-6xl font-bold tracking-tighter text-navy">
             <AnimatedNumber target={m.value} suffix={m.suffix} />
           </div>
-          <div className="mt-1 text-sm text-warm-gray">{m.label}</div>
+          <div className="mt-2 text-sm text-warm-gray uppercase tracking-wider">{m.label}</div>
         </motion.div>
       ))}
     </div>

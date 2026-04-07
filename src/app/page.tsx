@@ -35,22 +35,22 @@ export default function HomePage() {
       {/* Hero — Asymmetric split (text left, image right) */}
       <section className="section-gap">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center min-h-[80dvh]">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-warm-gray mb-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80dvh]">
+            <div className="py-8 lg:py-16">
+              <p className="text-sm font-semibold uppercase tracking-wider text-warm-gray mb-6">
                 CREAL Marketing Inc.
               </p>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-none text-navy">
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[0.95] text-navy">
                 Marketing that
                 <br />
                 <span className="text-yellow">thinks for itself.</span>
               </h1>
-              <p className="mt-6 text-lg text-warm-gray leading-relaxed max-w-[50ch]">
+              <p className="mt-8 text-lg md:text-xl text-warm-gray leading-relaxed max-w-[48ch]">
                 We combine AI, automation, and ten years of lead generation
                 experience to build marketing systems that grow your business
                 while you focus on what matters.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-10 flex flex-wrap gap-4">
                 <CTAButton href="/contact">Get in Touch</CTAButton>
                 <CTAButton href="/services" variant="outline">
                   Our Services
@@ -58,7 +58,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative aspect-[4/3] lg:aspect-auto lg:h-[600px] rounded-3xl overflow-hidden">
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
               <Image
                 src="/images/generated/hero.png"
                 alt="Abstract visualization of AI-powered marketing systems"
@@ -90,16 +90,14 @@ export default function HomePage() {
             </h2>
           </SectionReveal>
 
-          <div className="mt-16 flex flex-col gap-20">
+          <div className="mt-16 flex flex-col gap-24">
             {services.map((s, i) => (
               <SectionReveal key={s.title} delay={0.1}>
-                <div
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center`}
-                  style={i % 2 === 1 ? { direction: "rtl" } : undefined}
-                >
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                   <div
-                    className="relative aspect-[16/10] rounded-2xl overflow-hidden"
-                    style={{ direction: "ltr" }}
+                    className={`relative aspect-[16/10] rounded-2xl overflow-hidden ${
+                      i % 2 === 1 ? "lg:order-2" : ""
+                    }`}
                   >
                     <Image
                       src={s.image}
@@ -108,16 +106,16 @@ export default function HomePage() {
                       className="object-cover"
                     />
                   </div>
-                  <div style={{ direction: "ltr" }}>
-                    <h3 className="font-display text-2xl font-bold tracking-tight text-navy">
+                  <div className={i % 2 === 1 ? "lg:order-1" : ""}>
+                    <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-navy">
                       {s.title}
                     </h3>
-                    <p className="mt-3 text-warm-gray leading-relaxed max-w-[45ch]">
+                    <p className="mt-4 text-warm-gray leading-relaxed max-w-[45ch]">
                       {s.description}
                     </p>
                     <Link
                       href={s.href}
-                      className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-navy hover:text-yellow transition-colors"
+                      className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-navy hover:text-yellow transition-colors"
                     >
                       Learn more <ArrowRight size={16} />
                     </Link>
@@ -133,10 +131,10 @@ export default function HomePage() {
       <section className="bg-navy section-gap">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 text-center">
           <SectionReveal>
-            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tighter text-white">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
               Ready to automate your growth?
             </h2>
-            <p className="mt-4 text-warm-gray-light text-lg max-w-[50ch] mx-auto">
+            <p className="mt-6 text-warm-gray-light text-lg md:text-xl max-w-[50ch] mx-auto leading-relaxed">
               Let us show you how AI and automation can transform your marketing
               from a cost center into a growth engine.
             </p>

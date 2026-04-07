@@ -13,7 +13,7 @@ export function CTAButton({
   variant?: "primary" | "outline";
 }) {
   const base =
-    "inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold tracking-tight transition-all duration-300";
+    "inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold tracking-tight transition-all duration-300";
   const variants = {
     primary: "bg-yellow text-navy hover:bg-yellow-hover active:scale-[0.98]",
     outline:
