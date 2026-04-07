@@ -34,7 +34,7 @@ export default function AboutPage() {
   return (
     <>
       <section className="section-gap">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+        <div className="container-page">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20 items-start">
             <SectionReveal>
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-off-white">
@@ -83,7 +83,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-off-white section-gap">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+        <div className="container-page">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-center">
             <SectionReveal>
               <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tighter text-navy">
@@ -119,7 +119,7 @@ export default function AboutPage() {
       </section>
 
       <section className="section-gap">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+        <div className="container-page">
           <SectionReveal>
             <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tighter text-navy mb-12">
               The path here.

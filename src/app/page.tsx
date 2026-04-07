@@ -32,25 +32,25 @@ const services = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero — Asymmetric split (text left, image right) */}
-      <section className="min-h-[100dvh] flex items-center">
-        <div className="max-w-[1400px] w-full mx-auto px-6 lg:px-10 py-24 lg:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-[5fr_6fr] gap-10 lg:gap-12 items-center">
+      {/* Hero */}
+      <section style={{ minHeight: "100dvh", display: "flex", alignItems: "center" }}>
+        <div className="container-page" style={{ paddingTop: "6rem", paddingBottom: "4rem" }}>
+          <div className="hero-grid">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-warm-gray mb-6">
+              <p style={{ fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--color-warm-gray)", marginBottom: "1.5rem" }}>
                 CREAL Marketing Inc.
               </p>
-              <h1 className="font-display text-5xl md:text-6xl xl:text-7xl font-bold tracking-tighter leading-[0.95] text-navy">
+              <h1 className="font-display" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 0.95, color: "var(--color-navy)" }}>
                 Marketing that
                 <br />
-                <span className="text-yellow">thinks for itself.</span>
+                <span style={{ color: "var(--color-yellow)" }}>thinks for itself.</span>
               </h1>
-              <p className="mt-6 text-base md:text-lg text-warm-gray leading-relaxed">
+              <p style={{ marginTop: "1.5rem", fontSize: "1.125rem", color: "var(--color-warm-gray)", lineHeight: 1.7 }}>
                 We combine AI, automation, and ten years of lead generation
                 experience to build marketing systems that grow your business
                 while you focus on what matters.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div style={{ marginTop: "2rem", display: "flex", flexWrap: "wrap", gap: "1rem" }}>
                 <CTAButton href="/contact">Get in Touch</CTAButton>
                 <CTAButton href="/services" variant="outline">
                   Our Services
@@ -58,7 +58,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-navy/15">
+            <div style={{ position: "relative", aspectRatio: "4/3", borderRadius: "1.5rem", overflow: "hidden", boxShadow: "0 25px 50px -12px rgba(26,42,79,0.2)" }}>
               <Image
                 src="/images/generated/hero.png"
                 alt="Abstract visualization of AI-powered marketing systems"
@@ -72,33 +72,29 @@ export default function HomePage() {
       </section>
 
       {/* Metrics */}
-      <section className="bg-off-white section-gap">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+      <section className="section-gap" style={{ backgroundColor: "var(--color-off-white)" }}>
+        <div className="container-page">
           <MetricsStrip />
         </div>
       </section>
 
-      {/* Services — Zig-zag layout */}
+      {/* Services */}
       <section className="section-gap">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+        <div className="container-page">
           <SectionReveal>
-            <p className="text-sm font-semibold uppercase tracking-wider text-warm-gray mb-3">
+            <p style={{ fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--color-warm-gray)", marginBottom: "0.75rem" }}>
               What We Do
             </p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tighter text-navy max-w-[20ch]">
+            <h2 className="font-display" style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)", fontWeight: 700, letterSpacing: "-0.02em", color: "var(--color-navy)" }}>
               Three ways we drive growth.
             </h2>
           </SectionReveal>
 
-          <div className="mt-16 flex flex-col gap-24">
+          <div style={{ marginTop: "4rem", display: "flex", flexDirection: "column", gap: "5rem" }}>
             {services.map((s, i) => (
               <SectionReveal key={s.title} delay={0.1}>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                  <div
-                    className={`relative aspect-[16/10] rounded-2xl overflow-hidden bg-navy/5 ${
-                      i % 2 === 1 ? "lg:order-2" : ""
-                    }`}
-                  >
+                <div className={`service-zigzag${i % 2 === 1 ? " reverse" : ""}`}>
+                  <div className="service-image" style={{ position: "relative", aspectRatio: "16/10", borderRadius: "1rem", overflow: "hidden", backgroundColor: "rgba(26,42,79,0.04)" }}>
                     <Image
                       src={s.image}
                       alt={s.title}
@@ -106,16 +102,16 @@ export default function HomePage() {
                       className="object-cover"
                     />
                   </div>
-                  <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                    <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-navy">
+                  <div className="service-text">
+                    <h3 className="font-display" style={{ fontSize: "clamp(1.5rem, 2vw, 2rem)", fontWeight: 700, letterSpacing: "-0.02em", color: "var(--color-navy)" }}>
                       {s.title}
                     </h3>
-                    <p className="mt-4 text-warm-gray leading-relaxed max-w-[45ch]">
+                    <p style={{ marginTop: "0.75rem", color: "var(--color-warm-gray)", lineHeight: 1.7 }}>
                       {s.description}
                     </p>
                     <Link
                       href={s.href}
-                      className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-navy hover:text-yellow transition-colors"
+                      style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", marginTop: "1rem", fontSize: "0.875rem", fontWeight: 600, color: "var(--color-navy)" }}
                     >
                       Learn more <ArrowRight size={16} />
                     </Link>
@@ -128,17 +124,17 @@ export default function HomePage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="bg-navy section-gap">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 text-center">
+      <section className="section-gap" style={{ backgroundColor: "var(--color-navy)" }}>
+        <div className="container-page" style={{ textAlign: "center" }}>
           <SectionReveal>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 700, letterSpacing: "-0.03em", color: "#ffffff" }}>
               Ready to automate your growth?
             </h2>
-            <p className="mt-6 text-warm-gray-light text-lg md:text-xl max-w-[50ch] mx-auto leading-relaxed">
+            <p style={{ marginTop: "1.25rem", fontSize: "1.125rem", color: "var(--color-warm-gray-light)", maxWidth: "50ch", marginLeft: "auto", marginRight: "auto", lineHeight: 1.7 }}>
               Let us show you how AI and automation can transform your marketing
               from a cost center into a growth engine.
             </p>
-            <div className="mt-8">
+            <div style={{ marginTop: "2rem" }}>
               <CTAButton href="/contact">Get in Touch</CTAButton>
             </div>
           </SectionReveal>

@@ -10,7 +10,7 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="bg-off-white border-t border-warm-gray-light/50">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-16">
+      <div className="container-page" style={{ paddingTop: "4rem", paddingBottom: "4rem" }}>
         <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-12">
           <div>
             <Link href="/" className="font-display text-xl font-bold tracking-tighter text-navy">

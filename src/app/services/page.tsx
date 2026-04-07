@@ -55,7 +55,7 @@ export default function ServicesPage() {
   return (
     <>
       <section className="section-gap pb-0">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+        <div className="container-page">
           <SectionReveal>
             <p className="text-sm font-semibold uppercase tracking-wider text-warm-gray mb-3">
               Services
@@ -73,7 +73,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="section-gap">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+        <div className="container-page">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-16 lg:gap-20">
             <div className="flex flex-col gap-16">
               {services.slice(0, 2).map((s, i) => (
@@ -92,7 +92,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="bg-off-white section-gap">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 text-center">
+        <div className="container-page text-center">
           <SectionReveal>
             <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tighter text-navy">
               Not sure which service fits?

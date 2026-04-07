@@ -30,7 +30,7 @@ const socials = [
 export default function ContactPage() {
   return (
     <section className="section-gap">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+      <div className="container-page">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-20">
           <SectionReveal>
             <p className="text-sm font-semibold uppercase tracking-wider text-warm-gray mb-3">

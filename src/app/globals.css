@@ -41,15 +41,81 @@ body {
   color: var(--color-navy);
 }
 
+.container-page {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (min-width: 768px) {
+  .container-page {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-page {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
 .section-gap {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 @media (min-width: 1024px) {
   .section-gap {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+/* Hero grid */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 3rem;
+  }
+}
+
+/* Zigzag service grid */
+.service-zigzag {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .service-zigzag {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.service-zigzag.reverse .service-image {
+  order: 0;
+}
+
+@media (min-width: 1024px) {
+  .service-zigzag.reverse .service-image {
+    order: 2;
+  }
+  .service-zigzag.reverse .service-text {
+    order: 1;
   }
 }
 
