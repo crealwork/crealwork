@@ -1,26 +1,82 @@
 @import "tailwindcss";
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap");
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-navy: #1A2A4F;
+  --color-navy-light: #2A3D6B;
+  --color-yellow: #FFCC4E;
+  --color-yellow-hover: #F5BF35;
+  --color-coral: #D77A61;
+  --color-warm-gray: #A39F94;
+  --color-warm-gray-light: #D4D1CB;
+  --color-off-white: #FAFAF8;
+  --color-off-black: #18181B;
+
+  --font-display: "Satoshi", system-ui, sans-serif;
+  --font-body: "Geist", system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  color: var(--color-navy);
+  background: #ffffff;
+}
+
+::selection {
+  background: var(--color-yellow);
+  color: var(--color-navy);
+}
+
+.section-gap {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 1024px) {
+  .section-gap {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-yellow);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
