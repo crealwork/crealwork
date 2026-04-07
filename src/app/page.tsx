@@ -33,24 +33,24 @@ export default function HomePage() {
   return (
     <>
       {/* Hero — Asymmetric split (text left, image right) */}
-      <section className="section-gap">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80dvh]">
-            <div className="py-8 lg:py-16">
-              <p className="text-sm font-semibold uppercase tracking-wider text-warm-gray mb-6">
+      <section className="min-h-[100dvh] flex items-center">
+        <div className="max-w-[1400px] w-full mx-auto px-6 lg:px-10 py-24 lg:py-32">
+          <div className="grid grid-cols-1 lg:grid-cols-[5fr_6fr] gap-10 lg:gap-12 items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-warm-gray mb-6">
                 CREAL Marketing Inc.
               </p>
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[0.95] text-navy">
+              <h1 className="font-display text-5xl md:text-6xl xl:text-7xl font-bold tracking-tighter leading-[0.95] text-navy">
                 Marketing that
                 <br />
                 <span className="text-yellow">thinks for itself.</span>
               </h1>
-              <p className="mt-8 text-lg md:text-xl text-warm-gray leading-relaxed max-w-[48ch]">
+              <p className="mt-6 text-base md:text-lg text-warm-gray leading-relaxed">
                 We combine AI, automation, and ten years of lead generation
                 experience to build marketing systems that grow your business
                 while you focus on what matters.
               </p>
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap gap-4">
                 <CTAButton href="/contact">Get in Touch</CTAButton>
                 <CTAButton href="/services" variant="outline">
                   Our Services
@@ -58,7 +58,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-navy/5 shadow-lg shadow-navy/10">
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-navy/15">
               <Image
                 src="/images/generated/hero.png"
                 alt="Abstract visualization of AI-powered marketing systems"

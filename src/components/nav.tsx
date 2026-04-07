@@ -22,7 +22,7 @@ export function Nav() {
     <nav className="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-xl border-b border-warm-gray-light/50">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link href="/" className="font-display text-xl font-bold tracking-tighter text-navy">
+          <Link href="/" className="font-display text-2xl font-bold tracking-tighter text-navy">
             CREAL
           </Link>
 

@@ -41,7 +41,7 @@ const metrics = [
 
 export function MetricsStrip() {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
       {metrics.map((m, i) => (
         <motion.div
           key={m.label}
