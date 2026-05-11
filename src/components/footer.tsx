@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="bg-off-white border-t border-warm-gray-light/50">
       <div className="container-page" style={{ paddingTop: "4rem", paddingBottom: "4rem" }}>
-        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-12">
           <div>
             <Link href="/" className="font-display text-xl font-bold tracking-tighter text-navy">
               CREAL
@@ -27,6 +27,14 @@ export function Footer() {
               <Link href="/services" className="text-sm text-navy hover:text-yellow transition-colors">Services</Link>
               <Link href="/about" className="text-sm text-navy hover:text-yellow transition-colors">About</Link>
               <Link href="/contact" className="text-sm text-navy hover:text-yellow transition-colors">Contact</Link>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-warm-gray mb-4">Legal</h4>
+            <div className="flex flex-col gap-2">
+              <Link href="/privacy" className="text-sm text-navy hover:text-yellow transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="text-sm text-navy hover:text-yellow transition-colors">Terms of Service</Link>
             </div>
           </div>
 
